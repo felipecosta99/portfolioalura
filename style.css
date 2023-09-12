@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,600;1,300&display=swap');
+
+:root{
+    --cor-primaria:#03C988;
+    --cor-secundaria: #512B81;
+    --cor-terciaria:#4477CE;
+    --cor-hover:#F8DE22;
+
+    --font-principal: 'Krona One', sans-serif;
+    --font-secundaria:'Montserrat', sans-serif;
+/* neste trecho do codigo eu declarei uma variavel global que poderei usar a qualquer momento dentro do codigo.*/
+}
+
+*{
+    margin:0;
+    padding:0;
+
+}
+
+
+body{
+    height:100vh;
+    box-sizing:border-box;
+    background-color:var(--cor-primaria);
+    color:var(--cor-secundaria);
+}
+.cabecalho{
+    padding: 2% 0% 0% 15%; /* dessa forma o espacamento padding è superior , esquerda, inferior,direita*/
+
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family: 'montserrat',sans-serif;
+    font-size: 1.5rem ; /* 1.5 rem è igual a 24px*/
+    font-weight: 600;
+    color:var(--cor-terciaria);
+    text-decoration: none;
+}
+
+
+.apresentacao{
+    padding:10% 15%;
+    display:flex;  /*propriedade è o display e flex è um valor*/
+    align-items:center;/* propriedade è o align items e center è o valor. propriedade de alinhamento*/
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox  guia completo do flexbox/*/
+    justify-content:  space-between;
+    gap: 82px;
+}
+.apresentacao__imagem{
+    width: 50%;
+}
+.apresentacao__conteudo{
+  
+    display: flex;
+    flex-direction: column;
+    gap: 40px;/* Ela especifica no CSS o tamanho dos espaços entre linhas e colunas em layouts*/
+
+}
+.apresentacao__conteudo__titulo {
+    padding-bottom: 20px;
+    font-size: 2.5rem;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apresentacao__links{
+    display: flex; /* nesta propriedade display e o valor flex ,automaticamente ficam em row ou seja em linha*/
+    flex-direction: column; /* o valor column è pra colocar em coluna o objeto desejado*/
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+}
+.apresentacao__links__subtitulo{
+    font-family: "krona One", sans-serif ; /* font-family è a familia da fonte, tipo de fonte*/
+    font-weight: 400; /* font - weigth è o peso da fonte */
+    font-size: 1.5rem;/* font -size è o tamanho da fonte*/
+    
+}
+.apresentacao__links__subtitulo:hover{
+        font-size: 1.5rem;
+        color:var(--cor-hover);
+        font-weight: 700;
+/* Com o Hover estilizo individualmete o que desejo ,neste caso serve sempre
+a class que vou estilizar neste caso .apresentacao__link__subtitulo + :hover*/
+}
+.apresentacao__links__navegacao {
+    
+  
+    display: flex;
+    justify-content: center;/* centraliza a imagem ou o texto desejado */
+    gap: 16px;/* espaçamento de uma img ou texto pra o outro,neste caso o logo deu um espacamento do texto */
+    border: 2px solid var(--cor-terciaria);  /*border = borda ,2px è a espessura da borda */
+    width: 50%; /* largura*/
+    text-align: center; /*alinhamento do testo, neste caso esta central*/
+    border-radius: 8px; /*borda arredondada do botao*/
+    font-size: 1.5rem; /* tamanho da fonte*/
+    font-weight: 600;/*peso da fonte*/
+    padding:21.5px 0 ; /*neste caso posso utilizar dois valores que sao 21.5 e 0 */
+    text-decoration: none;/* para tirar a linha de baixo do link*/
+    color:var(--cor-secundaria);/*cor do testo neste caso a cor do testo dentro do botao */
+    font-family: 'Montserrat', sans-serif; /*tipo de fonte*/
+}
+.apresentacao__links__navegacao:hover/*Estilizando o botao para ter um preenchimento quando o mouse passa por cima */{
+    background-color: var(--cor-hover);
+    padding: 3%;
+   /* border-color: red;*/
+    /*color: red;*/
+/* todas as tag e propriedades nesta class vai ser somente para o preenchimento */
+
+
+}
+
+.titulo_destaque{
+    color: var(--cor-terciaria);
+}
+.rodape {
+    padding: 5px;
+    color:var(--cor-primaria);
+    background-color:var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-family: 'Montserrat',sans-serif;
+
+}
+
+
+.apresentacao__conteudo__texto a{
+    text-decoration: none;
+    color: #22D4FD;
+}
+
+@media (max-width:1200px ){
+    .cabecalho {
+        padding: 10%;
+    }
+    .cabecalho__menu{ 
+        justify-content: center;
+    }
+    
+    .apresentacao{
+        flex-direction: column-reverse; /* colum-reverse è inventer a ordem da pagina, neste caso a img estava em baixo e foi pra cima*/
+        padding: 5%;
+    }
+    .apresentacao__conteudo{ 
+
+        width: auto;
+    }
+   
+
+
+}
+
+
+/*comentarios*/
+
+/* height :100vh é simplesmente um padrao a ser usado para obter os 100% do dispositivo
+
+/*box sizing :border box é simplesmente um padrao para que tudo possa estar dentro do dispositivo 
+    e nao acontecer quando entra em uma pagina via telefono e ter que dar zoom ou diminuir a tela
+
+/* titulo-destaque è uma class que colocamos no html no css para configurar devo somente
+colocar .(e o nome da class) que neste caso è.titulo-destaque e configuro individualme 
+aquilo que desejo*/
+
+/* na primeira linha uso a sintaxe * para ressetar os padroes dos navegadores .essa è a
+sintaxe mais simples de ser usada 
+
+/*no figma o W è largura e H altura*/
+
+/*border-width: 30px;  Estiliza a sua largura
+border-style: solid; // Estiliza seu estilo
+border-color:  blue; // Estiliza sua cor*/
+
+/* border-top: Aplica borda na parte superior de um elemento.
+border-left: Aplica borda no lado esquerdo de um elemento.
+border-right: Aplica borda no lado direito de um elemento.
+border-bottom: Aplica borda na parte inferior de um elemento.*/
+
+/*REM --> è uma unidade de medida que acompanha a unidade de medida do navegador */
